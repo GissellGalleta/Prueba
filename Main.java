@@ -7,9 +7,9 @@ public class Main {
         static String nombre;
 
         //vectores
+
         public static Vector<Materia>materias = new Vector<Materia>();
-
-
+        public static Vector<Grupo>grupos = new Vector<Grupo>();
 
     //------------
 
@@ -97,6 +97,7 @@ public class Main {
         opcion = scan.nextInt();
         return opcion;
     }
+    // - - - - - - - - - - - - -
     public static void altaMateria(){
         int id;
         String nombre;
@@ -113,4 +114,26 @@ public class Main {
             materias.elementAt(i).imprimir();
         }
     }
+    // - - - - - - - - - - - - -
+    public static void altaGrupo(){
+        String clave;
+        int hora;
+        int salon;
+        System.out.println("\n- Alta Grupo -\n");
+        System.out.print("Clave del grupo: ");
+        clave=scan.nextLine();
+        System.out.print("Horario del grupo: ");
+        hora=text.nextInt();
+        System.out.println("Salon:");
+        salon=text.nextInt();
+        grupos.addElement(new Grupo(clave, hora, salon));
+    }
+    public static void impGru(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<grupos.size(); i++){
+            grupos.elementAt(i).imprimir();
+        }
+    }
+    // - - - - - - - - - - - - -
+
 }
