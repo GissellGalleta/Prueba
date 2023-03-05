@@ -6,7 +6,7 @@ public class Main {
 
         //vectores
 
-
+    public static Vector<Especialidad>especialidades = new Vector<Especialidad>();
         //------------
 
     public static void main(String[] args) {
@@ -92,5 +92,21 @@ public class Main {
         System.out.print("\n Seleccione la opcion deseada: ");
         opcion = scan.nextInt();
         return opcion;
+    }
+    public static void altaEspecialidad(){
+        int id;
+        String nombre;
+        System.out.println("- Alta especialidad -");
+        System.out.print("Clave especialidad:");
+        id=scan.nextInt();
+        System.out.print("Nombre de la especialidad:");
+        nombre=text.nextLine();
+        especialidades.addElement(new Especialidad(id,nombre));
+    }
+    public static void impEsp(){
+        System.out.println("\n=== Registro de Especialidades ===\n");
+        for(int i=0; i<especialidades.size(); i++){
+            especialidades.elementAt(i).imprimir();
+        }
     }
 }
