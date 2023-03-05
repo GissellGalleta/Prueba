@@ -7,7 +7,7 @@ public class Main {
         static String nombre;
 
         //vectores
-
+        public static Vector<Alumno>alumnos = new Vector<Alumno>();
 
         //------------
 
@@ -94,5 +94,25 @@ public class Main {
         System.out.print("\n Seleccione la opcion deseada: ");
         opcion = scan.nextInt();
         return opcion;
+
+    }
+    // - - - - - - - - - - - - -
+
+    public static void altaAlumno(){
+        String nombre;
+        int numcontrol;
+        System.out.println("\n- Alta Alumno -\n");
+        System.out.print("Num. Control Alumno");
+        numcontrol=scan.nextInt();
+        System.out.print("Nombre del Alumno");
+        nombre=text.nextLine();
+        alumnos.addElement(new Alumno(nombre, numcontrol));
+    }
+    public static void impAlu(){
+        System.out.println("\n=== Registro de Alumnos ===\n");
+        for(int i=0; i<alumnos.size(); i++){
+            alumnos.elementAt(i).imprimir();
+        }
     }
 }
+
