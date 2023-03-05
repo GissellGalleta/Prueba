@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Main {
         public static Scanner scan = new Scanner(System.in);
@@ -7,9 +8,13 @@ public class Main {
         static String nombre;
 
         //vectores
-
-    public static Vector<Especialidad>especialidades = new Vector<Especialidad>();
+        public static Vector<Alumno>alumnos = new Vector<Alumno>();
+        public static Vector<Catedratico>catedraticos = new Vector<Catedratico>();
+        public static Vector<Materia>materias = new Vector<Materia>();
+        public static Vector<Grupo>grupos = new Vector<Grupo>();
+        public static Vector<Especialidad>especialidades = new Vector<Especialidad>();
         //------------
+
 
     public static void main(String[] args) {
         int opc = 0;
@@ -94,7 +99,28 @@ public class Main {
         System.out.print("\n Seleccione la opcion deseada: ");
         opcion = scan.nextInt();
         return opcion;
+
     }
+    // - - - - - - - - - - - - -
+
+    public static void altaAlumno(){
+        String nombre;
+        int numcontrol;
+        System.out.println("\n- Alta Alumno -\n");
+        System.out.print("Num. Control Alumno");
+        numcontrol=scan.nextInt();
+        System.out.print("Nombre del Alumno");
+        nombre=text.nextLine();
+        alumnos.addElement(new Alumno(nombre, numcontrol));
+    }
+    public static void impAlu(){
+        System.out.println("\n=== Registro de Alumnos ===\n");
+        for(int i=0; i<alumnos.size(); i++){
+            alumnos.elementAt(i).imprimir();
+        }
+    }
+    // - - - - - - - - - - - - -
+
     public static void altaEspecialidad(){
         int id;
         String nombre;
@@ -112,4 +138,62 @@ public class Main {
 
         }
     }
+ // - - - - - - - - - - - - -
+    public static void altaCatedratico(){
+        String RFC;
+        String nombre;
+        System.out.println("\n- Alta Catedratico -\n");
+        System.out.print("RFC Catedratico: ");
+        RFC=scan.nextLine();
+        System.out.print("Nombre del Catedratico: ");
+        nombre=text.nextLine();
+        catedraticos.addElement(new Catedratico(RFC, nombre));
+    }
+    public static void impCat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<catedraticos.size(); i++){
+            catedraticos.elementAt(i).imprimir();
+        }
+    }
+
+    // - - - - - - - - - - - - -
+    public static void altaMateria(){
+        int id;
+        String nombre;
+        System.out.println("\n- Alta Materia -\n");
+        System.out.print("Id de la materia: ");
+        id=scan.nextInt();
+        System.out.print("Nombre de la materia: ");
+        nombre=text.nextLine();
+        materias.addElement(new Materia(id,nombre));
+    }
+    public static void impMat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<materias.size(); i++){
+            materias.elementAt(i).imprimir();
+        }
+    }
+    // - - - - - - - - - - - - -
+    public static void altaGrupo(){
+        String clave;
+        int hora;
+        int salon;
+        System.out.println("\n- Alta Grupo -\n");
+        System.out.print("Clave del grupo: ");
+        clave=scan.nextLine();
+        System.out.print("Horario del grupo: ");
+        hora=text.nextInt();
+        System.out.println("Salon:");
+        salon=text.nextInt();
+        grupos.addElement(new Grupo(clave, hora, salon));
+    }
+    public static void impGru(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<grupos.size(); i++){
+            grupos.elementAt(i).imprimir();
+        }
+    }
+    // - - - - - - - - - - - - -
+
 }
+
