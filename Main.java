@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
         public static Scanner scan = new Scanner(System.in);
         public static Scanner text = new Scanner(System.in);
