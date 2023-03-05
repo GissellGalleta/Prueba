@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Main {
         public static Scanner scan = new Scanner(System.in);
@@ -7,7 +8,7 @@ public class Main {
         static String nombre;
 
         //vectores
-
+        public static Vector<Catedratico>catedraticos = new Vector<Catedratico>();
         public static Vector<Materia>materias = new Vector<Materia>();
         public static Vector<Grupo>grupos = new Vector<Grupo>();
 
@@ -97,6 +98,24 @@ public class Main {
         opcion = scan.nextInt();
         return opcion;
     }
+ // - - - - - - - - - - - - -
+    public static void altaCatedratico(){
+        String RFC;
+        String nombre;
+        System.out.println("\n- Alta Catedratico -\n");
+        System.out.print("RFC Catedratico: ");
+        RFC=scan.nextLine();
+        System.out.print("Nombre del Catedratico: ");
+        nombre=text.nextLine();
+        catedraticos.addElement(new Catedratico(RFC, nombre));
+    }
+    public static void impCat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<catedraticos.size(); i++){
+            catedraticos.elementAt(i).imprimir();
+        }
+    }
+
     // - - - - - - - - - - - - -
     public static void altaMateria(){
         int id;
