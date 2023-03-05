@@ -36,5 +36,4 @@ public class Especialidad {
     public void imprimir(){
         System.out.println(toString());
     }
-
 }
