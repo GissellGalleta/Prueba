@@ -7,9 +7,11 @@ public class Main {
         static String nombre;
 
         //vectores
+        public static Vector<Materia>materias = new Vector<Materia>();
 
 
-        //------------
+
+    //------------
 
     public static void main(String[] args) {
         int opc = 0;
@@ -94,5 +96,21 @@ public class Main {
         System.out.print("\n Seleccione la opcion deseada: ");
         opcion = scan.nextInt();
         return opcion;
+    }
+    public static void altaMateria(){
+        int id;
+        String nombre;
+        System.out.println("\n- Alta Materia -\n");
+        System.out.print("Id de la materia: ");
+        id=scan.nextInt();
+        System.out.print("Nombre de la materia: ");
+        nombre=text.nextLine();
+        materias.addElement(new Materia(id,nombre));
+    }
+    public static void impMat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<materias.size(); i++){
+            materias.elementAt(i).imprimir();
+        }
     }
 }
