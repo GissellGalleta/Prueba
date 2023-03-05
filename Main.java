@@ -12,8 +12,8 @@ public class Main {
         public static Vector<Catedratico>catedraticos = new Vector<Catedratico>();
         public static Vector<Materia>materias = new Vector<Materia>();
         public static Vector<Grupo>grupos = new Vector<Grupo>();
-
-    //------------
+        public static Vector<Especialidad>especialidades = new Vector<Especialidad>();
+        //------------
 
 
     public static void main(String[] args) {
@@ -117,6 +117,25 @@ public class Main {
         System.out.println("\n=== Registro de Alumnos ===\n");
         for(int i=0; i<alumnos.size(); i++){
             alumnos.elementAt(i).imprimir();
+        }
+    }
+    // - - - - - - - - - - - - -
+
+    public static void altaEspecialidad(){
+        int id;
+        String nombre;
+        System.out.println("- Alta especialidad -");
+        System.out.print("Clave especialidad:");
+        id=scan.nextInt();
+        System.out.print("Nombre de la especialidad:");
+        nombre=text.nextLine();
+        especialidades.addElement(new Especialidad(id,nombre));
+    }
+    public static void impEsp(){
+        System.out.println("\n=== Registro de Especialidades ===\n");
+        for(int i=0; i<especialidades.size(); i++){
+            especialidades.elementAt(i).imprimir();
+
         }
     }
  // - - - - - - - - - - - - -
