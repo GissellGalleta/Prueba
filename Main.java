@@ -109,6 +109,7 @@ public class Main {
         System.out.println("\n=== Registro de Especialidades ===\n");
         for(int i=0; i<especialidades.size(); i++){
             especialidades.elementAt(i).imprimir();
+
         }
     }
 }
