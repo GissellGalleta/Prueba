@@ -37,5 +37,4 @@ public class Especialidad {
         System.out.println(toString());
     }
 
-
 }
